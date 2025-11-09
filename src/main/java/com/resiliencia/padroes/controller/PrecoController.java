@@ -6,12 +6,13 @@ import com.resiliencia.padroes.service.PrecoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller("/api")
+@RestController
 public class PrecoController {
 
     private final PrecoService precoService;
@@ -20,11 +21,10 @@ public class PrecoController {
         this.precoService = precoService;
     }
 
-    @GetMapping("/preco/{produtoId}")
-    public ResponseEntity<List<ProdutoRecord>> precos(@RequestParam String idProduto){
+    @GetMapping("/preco")
+    public ResponseEntity<List<ProdutoRecord>> precos(){
 
-
-
+        precoService.obterPreco();
 
         return null;
 

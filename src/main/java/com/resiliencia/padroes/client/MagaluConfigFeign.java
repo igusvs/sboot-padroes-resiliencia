@@ -10,7 +10,7 @@ public class MagaluConfigFeign {
 
     @Bean
     public Request.Options requestOption(){
-        return new Request.Options(1000, 1000);
+        return new Request.Options(2000, 2000);
     }
 
 }

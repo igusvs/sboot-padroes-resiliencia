@@ -2,6 +2,7 @@ package com.resiliencia.padroes.controller;
 
 import com.resiliencia.padroes.domain.Produto;
 import com.resiliencia.padroes.domain.ProdutoRecord;
+import com.resiliencia.padroes.domain.ProdutoSaleRecord;
 import com.resiliencia.padroes.service.PrecoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -22,11 +23,8 @@ public class PrecoController {
     }
 
     @GetMapping("/preco")
-    public ResponseEntity<List<ProdutoRecord>> precos(){
-
-        precoService.obterPreco();
-
-        return null;
+    public ResponseEntity<ProdutoSaleRecord> precos(){
+        return ResponseEntity.ok(precoService.obterPreco());
 
     }
 
